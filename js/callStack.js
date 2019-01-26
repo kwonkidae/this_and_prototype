@@ -1,19 +1,8 @@
-global.a = 5;
+a = 5;
 
 function foo() {
+  this.b = 3;
   console.log('foo', this.a);
-  bar();
 }
-
-const obj = {
-  b: 5,
-  foo: foo
-};
 
 foo();
-
-obj.foo();
-
-function bar() {
-  console.log('bar', this.a);
-}

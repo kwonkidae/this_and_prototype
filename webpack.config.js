@@ -1,30 +1,24 @@
-var path = require('path');
-var webpack = require('webpack');
 
+const path = require('path');
+console.log(path.resolve(__dirname, 'build'));
 module.exports = {
-    entry: './js/main.js',
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'main.bundle.js'
-    },
-    module: {
-      rules: [
-        { test: /.js$/, loader: 'babel-loader' }
-      ]
-    },
-    // module: {
-    //     loaders: [
-    //         {
-    //             test: /\.js$/,
-    //             loader: 'babel-loader',
-    //             query: {
-    //                 presets: ['es2015']
-    //             }
-    //         }
-    //     ]
-    // },
-    stats: {
-        colors: true
-    },
-    devtool: 'source-map'
+  entry: './js/main.js',
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: {
+          loader: 'babel-loader',
+        },
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'build')
+  }
 };

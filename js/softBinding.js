@@ -1,12 +1,12 @@
-global.a = 5;
+window.a = 5;
 
 function test() {
-  console.log(this === global);
+  console.log(this);
   console.log(this.a);
-  console.log(this.prototype);
 }
 
-// test();
+
+test();
 
 const obj = {
   a: 10,
@@ -16,12 +16,6 @@ const obj = {
 const curriedObj = [1,2,3,4,5];
 
 var curried = [].slice.call(curriedObj, 1);
-console.log(curried);
-console.log(curriedObj);
-
-console.log(curried.concat.apply(curried, curriedObj));
-
-
 
 //  obj.foo();
 
@@ -42,21 +36,22 @@ if (!Function.prototype.softBind) {
     return bound;
   }
 }
+(function(){
+  function foo() {
+    console.log("name: " + this.name);
+  }
 
-function foo() {
-  console.log("name: " + this.name);
-}
+  foo.softBind(obj);
 
-foo.softBind(obj);
+  function thisTest() {
+    console.log('this.a', this.a);
+  }
 
-function thisTest() {
-  console.log('this.a', this.a);
-}
+  const objj = { a: 5 };
 
-const objj = { a: 5 };
+  objj.thisTest = thisTest;
 
-objj.thisTest = thisTest;
+  objj.thisTest();
 
-objj.thisTest();
-
-console.log((obj.foo=thisTest));
+  console.log((obj.foo=thisTest));
+});
