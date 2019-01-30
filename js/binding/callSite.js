@@ -40,10 +40,10 @@ var obj = {
 }
 
 window.b = 1234;
-
+obj.foo();
 "use strict";
 ;(function(){
   console.log(this.a);
   foo();
-  obj.foo();
+
 })();
