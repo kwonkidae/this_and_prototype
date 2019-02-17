@@ -8,4 +8,6 @@
 // import '../js/binding/implicit';
 // import '../js/binding/explicit';
 // import '../js/binding/hard';
-import '../js/binding/new';
+// import '../js/binding/new';
+// import '../js/binding/order';
+import '../js/binding/saferThis';
