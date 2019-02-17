@@ -10,4 +10,6 @@
 // import '../js/binding/hard';
 // import '../js/binding/new';
 // import '../js/binding/order';
-import '../js/binding/saferThis';
+// import '../js/binding/saferThis';
+// import '../js/object/array';
+import '../js/object/getset';
