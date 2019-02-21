@@ -3,4 +3,5 @@
 // import '../js/whyThis';
 // import '../js/itself';
 
-import '../js/binding/default';
+// import '../js/binding/default';
+import '../js/binding/new';
