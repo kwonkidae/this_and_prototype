@@ -41,3 +41,11 @@ var bar = foo.bind( null, 1 );
 bar( 2 );
 var newBar = new bar(3);
 console.log(newBar);
+(function(){
+  function foo(a) {
+    this.a = a;
+  }
+
+  const bar = new foo(2);
+  console.log(bar.a);
+})();
